@@ -1,0 +1,6 @@
+
+
+// px값을 자동으로 rem으로 변환환
+@function rem($px-value) {
+  @return $px-value / 16 * 1rem;
+}

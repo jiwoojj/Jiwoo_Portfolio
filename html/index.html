@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, width=device-width, viewport-fit=cover" />
+  <meta property="og:image" content="img/title_img.png" />
+  <meta property="og:title" content="정지우_웹 포트폴리오" />
+  <meta property="og:description" content="신입 웹 퍼블리셔 입니다." />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../css/common.css">
+
+  <!-- Library -->
+  <link rel="stylesheet" href="../scss/lib/_nice-select.scss">
+  <link rel="stylesheet" href="../scss/lib/_swiper.scss">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <script src="../js/jquery-ui.js"></script>
+  <script src="../js/jquery.ui.touch-punch.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
+  <script src="../js/TweenMax.min.js"></script>
+  <script src="../js/jquery.nice-select.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+
+  <!-- UI -->
+  <script src="../js/ui.js"></script>
+
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/fcfd9e4076.js" crossorigin="anonymous"></script>
+
+  <title>정지우 / 웹 퍼블리셔 포트폴리오</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header -->
+    <header>
+      <h1 class="logo">
+        <a href="#section1">JUST <span>DO IT!</span></a>
+      </h1>
+      <nav class="header-menu">
+        <ul class="header-menu-wrap">
+          <li class="menu-tab"><a href="#section1">HOME</a></li>
+          <li class="menu-tab"><a href="#section2">ABILITY</a></li>
+          <li class="menu-tab"><a href="#section3">PORTFOLIO</a></li>
+          <li class="menu-tab"><a href="#section4">ABOUT</a></li>
+          <li class="menu-tab"><a href="#section5">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <div id="fullpage">
+      <!-- home -->
+      <div class="section home" data-anchor="section1">
+
+        <div class="home-wrap">
+          <div class="text-wrap">
+            <p class="txt">Web Publisher Jiwoo's</p>
+            <h2 class="title">PORTFOLIO</h2>
+          </div>
+
+          <div class="scroll-down">
+            <a href="#section2">
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <!-- Ability -->
+      <div class="section" data-anchor="section2">ABILITY</div>
+      <!-- Portfolio -->
+      <div class="section" data-anchor="section3">PORTFOLIO</div>
+      <!-- About -->
+      <div class="section" data-anchor="section4">ABOUT</div>
+      <!-- Contact -->
+      <div class="section" data-anchor="section5">CONTACT</div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      $('#fullpage').fullpage({
+        anchors: ['section1', 'section2', 'section3', 'section4', 'section5'],
+        menu: '.menu-tab',
+        navigation: true,
+        scrollingSpeed: 700,
+        fitToSection: true,
+
+        onLeave: function (index, nextIndex, direction) {
+          console.log('Leaving section:', index);
+          console.log('Entering section:', nextIndex);
+
+          const menuItems = $('.menu-tab');
+          menuItems.removeClass('active');
+
+          // 이동할 섹션의 메뉴 활성화
+          menuItems.eq(nextIndex - 1).addClass('active');
+
+          const header = $('header');
+          header.toggleClass('shrink', nextIndex > 1);
+        },
+      });
+    });
+
+
+
+
+
+
+  </script>
+</body>
+</html>
